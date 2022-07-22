@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import AppBar from '@mui/material/AppBar'
+import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
@@ -18,6 +19,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import TranslateIcon from '@mui/icons-material/Translate'
 
+import profileAvatar from '../public/lev-avatar.jpg'
 import { ESocialLinks } from '../common'
 
 const localeNames: Record<string, string> = {
@@ -50,6 +52,9 @@ const Home: NextPage = (props: any) => {
 
       <AppBar color="transparent" position="sticky">
         <Toolbar>
+          <Avatar>
+            <Image src={profileAvatar} alt="Lev" layout="fill" />
+          </Avatar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             @save.lev.sma
           </Typography>
@@ -103,15 +108,14 @@ const Home: NextPage = (props: any) => {
 
       <Container component="main" maxWidth="md">
         <Box>
-          <h1>
-            Welcome to <a href="https://nextjs.org">Next.js!</a>
-          </h1>
+          <h1>Hi, my name is Lev and I want to live!</h1>
 
-          <p>TODO</p>
+          <p>Unfortunately, I was diagnosed with SMA when I was 8.5 months old.</p>
+          <p>But I will find a way to get well.</p>
         </Box>
       </Container>
 
-      <Container component="footer" maxWidth="md">
+      {/* <Container component="footer" maxWidth="md">
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -119,7 +123,7 @@ const Home: NextPage = (props: any) => {
         >
           Powered by <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a>
-      </Container>
+      </Container> */}
     </>
   )
 }
