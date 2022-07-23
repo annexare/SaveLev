@@ -1,8 +1,9 @@
-import { useState } from 'react'
-import type { NextPage, NextPageContext } from 'next'
+import { useContext, useState } from 'react'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
@@ -20,7 +21,8 @@ import TelegramIcon from '@mui/icons-material/Telegram'
 import TranslateIcon from '@mui/icons-material/Translate'
 
 import profileAvatar from '../public/lev-avatar.jpg'
-import { ESocialLinks } from '../common'
+import { LocaleContext } from './_app'
+import { ESocialLinks } from './_common'
 
 const localeNames: Record<string, string> = {
   en: 'English',
@@ -29,9 +31,10 @@ const localeNames: Record<string, string> = {
 
 const LocaleLink = ({ href, hrefLang }: any) => <Link href={href}>{localeNames[hrefLang]}</Link>
 
-const Home: NextPage = (props: any) => {
-  const { locale, locales = [] } = props
+const Home: NextPage = () => {
+  const { locale, locales = [] } = useRouter()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+  const { t } = useContext(LocaleContext)
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget)
@@ -46,8 +49,8 @@ const Home: NextPage = (props: any) => {
       <CssBaseline />
 
       <Head>
-        <title>@save.lev.sma</title>
-        <meta name="description" content="Save Lev SMA" />
+        <title>{t.title}</title>
+        <meta name="description" content={t.description} />
       </Head>
 
       <AppBar color="transparent" position="sticky">
@@ -108,7 +111,7 @@ const Home: NextPage = (props: any) => {
 
       <Container component="main" maxWidth="md">
         <Box>
-          <h1>Hi, my name is Lev and I want to live!</h1>
+          <h1>{t.infoH1}</h1>
 
           <p>Unfortunately, I was diagnosed with SMA when I was 8.5 months old.</p>
           <p>But I will find a way to get well.</p>
@@ -126,13 +129,6 @@ const Home: NextPage = (props: any) => {
       </Container> */}
     </>
   )
-}
-
-export async function getStaticProps(context: NextPageContext) {
-  const { locale, locales } = context
-  return {
-    props: { locale, locales }, // will be passed to the page component as props
-  }
 }
 
 export default Home

@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 
-export default function Document({ __NEXT_DATA__ }: any) {
+export default function Document() {
   return (
     <Html>
       <Head>
