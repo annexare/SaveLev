@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { NextSeo } from 'next-seo'
+import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
@@ -69,6 +69,13 @@ const Home: NextPage = () => {
           ],
         }}
         twitter={{ cardType: 'summary_large_image' }}
+      />
+
+      <SocialProfileJsonLd
+        type="Person"
+        name={t.name}
+        url="https://save-lev.com"
+        sameAs={[ESocialLinks.instagram]}
       />
 
       <AppBar
