@@ -12,6 +12,9 @@ export const en = {
   monoBanka: 'Monobank Jar',
   monoDonate: 'Donate',
   paymentDetails: 'Payment details',
+  socialDad: 'My dad\'s',
+  socialMom: 'My mom\'s',
+  socialMy: 'My',
   socialNetworks: 'Social networks',
   socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
 } as const

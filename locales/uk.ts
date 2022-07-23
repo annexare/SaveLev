@@ -14,6 +14,9 @@ export const uk: Translation = {
   monoBanka: 'Банка Monobank',
   monoDonate: 'Поповнити банку',
   paymentDetails: 'Мої реквізити',
+  socialDad: 'Мій тато в',
+  socialMom: 'Моя мама в',
+  socialMy: 'Мій',
   socialNetworks: 'Соціальні мережі',
   socialNetworksInfo: 'Ви можете знайти мої фото, відео та всі оновлення тут:',
 } as const

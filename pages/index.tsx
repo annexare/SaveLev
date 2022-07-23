@@ -234,7 +234,7 @@ const Home: NextPage = () => {
                 startIcon={<InstagramIcon />}
                 variant="outlined"
               >
-                My Instagram
+                {t.socialMy}&nbsp;Instagram
               </Button>
             </Typography>
 
@@ -245,7 +245,7 @@ const Home: NextPage = () => {
                 startIcon={<InstagramIcon />}
                 variant="outlined"
               >
-                My mom&lsquo;s Instagram
+                {t.socialMom}&nbsp;Instagram
               </Button>
             </Typography>
 
@@ -256,7 +256,7 @@ const Home: NextPage = () => {
                 startIcon={<InstagramIcon />}
                 variant="outlined"
               >
-                My dad&lsquo;s Instagram
+                {t.socialDad}&nbsp;Instagram
               </Button>
             </Typography>
           </Grid>
