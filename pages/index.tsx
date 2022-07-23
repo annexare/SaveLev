@@ -1,13 +1,13 @@
 import { useContext, useState } from 'react'
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
+import { NextSeo } from 'next-seo'
+
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
-import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
@@ -19,7 +19,6 @@ import Grid from '@mui/material/Grid'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-import Paper from '@mui/material/Paper'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
@@ -55,10 +54,22 @@ const Home: NextPage = () => {
     <>
       <CssBaseline />
 
-      <Head>
-        <title>{t.title}</title>
-        <meta name="description" content={t.description} />
-      </Head>
+      <NextSeo
+        title={t.title}
+        description={t.description}
+        openGraph={{
+          images: [
+            {
+              url: infoImage.src,
+              width: infoImage.width,
+              height: infoImage.height,
+              alt: t.name,
+              type: 'image/jpeg',
+            },
+          ],
+        }}
+        twitter={{ cardType: 'summary_large_image' }}
+      />
 
       <AppBar
         color="transparent"
