@@ -1,5 +1,6 @@
 export const en = {
   title: 'Save Lev with SMA',
+  name: 'Lev Kotliarchyk',
   description:
     'At the age of 8.5 months, I was diagnosed with SMA. But I want to live, help me heal.',
   infoH1: 'Hi, my name is Lev and I was diagnosed with SMA',
@@ -10,6 +11,9 @@ export const en = {
   ibanPaymentDetails: 'IBAN & Details',
   monoBanka: 'Monobank Jar',
   monoDonate: 'Donate',
+  paymentDetails: 'Payment details',
+  socialNetworks: 'Social networks',
+  socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
 } as const
 
 export type TranslationKeys = keyof typeof en
