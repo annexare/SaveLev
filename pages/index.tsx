@@ -26,9 +26,9 @@ import PaymentIcon from '@mui/icons-material/Payment'
 import TelegramIcon from '@mui/icons-material/Telegram'
 import TranslateIcon from '@mui/icons-material/Translate'
 
+import { ESocialLinks, creditCards, paypalEmail } from '../_data'
 import profileAvatar from '../public/lev-avatar.jpg'
 import { LocaleContext } from './_app'
-import { ESocialLinks, creditCards, paypalEmail } from './_data'
 
 const localeNames: Record<string, string> = {
   en: 'English',
