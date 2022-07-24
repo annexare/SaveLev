@@ -5,7 +5,7 @@ export enum ESocialLinks {
   telegram = '',
 }
 
-interface ICreditCard {
+export interface ICreditCard {
   number: string
   currency: 'EUR' | 'UAH' | 'USD'
   iban: string

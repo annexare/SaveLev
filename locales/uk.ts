@@ -13,7 +13,7 @@ export const uk: Translation = {
   ibanPaymentDetails: 'IBAN та реквізити',
   monoBanka: 'Банка Monobank',
   monoDonate: 'Поповнити банку',
-  paymentDetails: 'Мої реквізити',
+  paymentDetails: 'Збір коштів',
   socialDad: 'Мій тато в',
   socialMom: 'Моя мама в',
   socialMy: 'Мій',

@@ -1,16 +1,12 @@
 import { useContext } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Script from 'next/script'
-
-import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
-import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
@@ -19,6 +15,9 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import PaymentIcon from '@mui/icons-material/Payment'
 
 import infoImage from 'public/img/1.jpeg'
+import { BaseCssSeo } from 'src/components/BaseCssSeo'
+import { BaseScripts } from 'src/components/BaseScripts'
+import { CreditCard } from 'src/components/CreditCard'
 import { TopNavBar } from 'src/components/TopNavBar'
 import { ESocialLinks, creditCards, paypalEmail } from 'src/data'
 
@@ -29,31 +28,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <CssBaseline />
-
-      <NextSeo
-        title={t.title}
-        description={t.description}
-        openGraph={{
-          images: [
-            {
-              url: infoImage.src,
-              width: infoImage.width,
-              height: infoImage.height,
-              alt: t.name,
-              type: 'image/jpeg',
-            },
-          ],
-        }}
-        twitter={{ cardType: 'summary_large_image' }}
-      />
-
-      <SocialProfileJsonLd
-        type="Person"
-        name={t.name}
-        url="https://save-lev.com"
-        sameAs={[ESocialLinks.instagram]}
-      />
+      <BaseCssSeo />
 
       <TopNavBar />
 
@@ -92,17 +67,7 @@ const Home: NextPage = () => {
             <Grid container spacing={1}>
               {creditCards.map((card) => (
                 <Grid key={card.number} item xs={6} md={12}>
-                  <Card elevation={1} sx={{ flex: 1, flexGrow: 1 }}>
-                    <CardContent>
-                      <Typography color="text.secondary" gutterBottom variant="subtitle2">
-                        {card.currency}
-                      </Typography>
-                      <Typography>{card.number}</Typography>
-                    </CardContent>
-                    {/* <CardActions>
-                  <Button size="small" startIcon={<PaymentIcon />}>{t.ibanPaymentDetails}</Button>
-                </CardActions> */}
-                  </Card>
+                  <CreditCard {...card} />
                 </Grid>
               ))}
 
@@ -189,19 +154,8 @@ const Home: NextPage = () => {
           Powered by <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a> */}
       </Container>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
 
-          gtag('config', 'G-BR5JBVCH9L');
-        `}
-      </Script>
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-BR5JBVCH9L"
-        strategy="afterInteractive"
-      />
+      <BaseScripts />
     </>
   )
 }

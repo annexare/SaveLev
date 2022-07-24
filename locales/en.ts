@@ -11,7 +11,7 @@ export const en = {
   ibanPaymentDetails: 'IBAN & Details',
   monoBanka: 'Monobank Jar',
   monoDonate: 'Donate',
-  paymentDetails: 'Payment details',
+  paymentDetails: 'Fundraising',
   socialDad: 'My dad\'s',
   socialMom: 'My mom\'s',
   socialMy: 'My',
