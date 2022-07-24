@@ -3,9 +3,11 @@ import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
 import CssBaseline from '@mui/material/CssBaseline'
 
-import infoImage from 'public/img/1.jpeg'
+import mainLevPhoto from 'public/img/4.jpg'
 import { ESocialLinks } from 'src/data'
 import { useTranslation } from 'src/hooks/useTranslation'
+
+export { mainLevPhoto }
 
 export const BaseCssSeo: FC = () => {
   const t = useTranslation()
@@ -20,9 +22,9 @@ export const BaseCssSeo: FC = () => {
         openGraph={{
           images: [
             {
-              url: infoImage.src,
-              width: infoImage.width,
-              height: infoImage.height,
+              url: mainLevPhoto.src,
+              width: mainLevPhoto.width,
+              height: mainLevPhoto.height,
               alt: t.name,
               type: 'image/jpeg',
             },

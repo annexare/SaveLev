@@ -13,8 +13,7 @@ import Typography from '@mui/material/Typography'
 
 import PaymentIcon from '@mui/icons-material/Payment'
 
-import infoImage from 'public/img/1.jpeg'
-import { BaseCssSeo } from 'src/components/BaseCssSeo'
+import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
 import { BaseScripts } from 'src/components/BaseScripts'
 import { CreditCard } from 'src/components/CreditCard'
@@ -50,7 +49,7 @@ const Home: NextPage = () => {
 
             <Card sx={{ flex: 1, flexGrow: 1 }}>
               <CardMedia
-                component={() => <Image src={infoImage} alt={t.name} />}
+                component={() => <Image src={mainLevPhoto} alt={t.name} />}
                 sx={{ flex: 1 }}
               />
               <CardContent>
