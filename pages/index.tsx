@@ -1,14 +1,10 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
 import Script from 'next/script'
 
 import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 
-import AppBar from '@mui/material/AppBar'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardActions from '@mui/material/CardActions'
@@ -17,39 +13,19 @@ import CardMedia from '@mui/material/CardMedia'
 import CssBaseline from '@mui/material/CssBaseline'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
-import IconButton from '@mui/material/IconButton'
-import Menu from '@mui/material/Menu'
-import MenuItem from '@mui/material/MenuItem'
-import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
 import InstagramIcon from '@mui/icons-material/Instagram'
 import PaymentIcon from '@mui/icons-material/Payment'
-import TelegramIcon from '@mui/icons-material/Telegram'
-import TranslateIcon from '@mui/icons-material/Translate'
 
-import { ESocialLinks, creditCards, paypalEmail } from '../_data'
-import infoImage from '../public/img/1.jpeg'
-import profileAvatar from '../public/lev-avatar.jpg'
+import infoImage from 'public/img/1.jpeg'
+import { TopNavBar } from 'src/components/TopNavBar'
+import { ESocialLinks, creditCards, paypalEmail } from 'src/data'
+
 import { LocaleContext } from './_app'
 
-const localeNames: Record<string, string> = {
-  en: 'English',
-  uk: 'Українська',
-}
-
 const Home: NextPage = () => {
-  const { locale, locales = [] } = useRouter()
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
   const { t } = useContext(LocaleContext)
-
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
 
   return (
     <>
@@ -79,67 +55,7 @@ const Home: NextPage = () => {
         sameAs={[ESocialLinks.instagram]}
       />
 
-      <AppBar
-        color="transparent"
-        position="sticky"
-        sx={{ backdropFilter: 'blur(20px)', background: 'rgba(255,255,255,0.7)' }}
-      >
-        <Toolbar>
-          <Avatar>
-            <Image src={profileAvatar} alt="Lev" layout="fill" />
-          </Avatar>
-          &nbsp;
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            @save.lev.sma
-          </Typography>
-          <IconButton
-            color="secondary"
-            size="large"
-            href={ESocialLinks.instagram}
-            title="Instagram"
-          >
-            <InstagramIcon />
-          </IconButton>
-          <IconButton
-            color="primary"
-            disabled
-            size="large"
-            href={ESocialLinks.telegram}
-            title="Telegram"
-          >
-            <TelegramIcon />
-          </IconButton>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleMenu}
-            color="inherit"
-          >
-            <TranslateIcon />
-          </IconButton>
-          <Menu
-            MenuListProps={{
-              // @ts-ignore
-              component: 'nav',
-            }}
-            id="menu-locale"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            {locales.map((l: string) => (
-              <Link key={l} href={`/${l === 'en' ? '' : l}`} hrefLang={l} locale={false} passHref>
-                <MenuItem component="a" selected={l === locale} onClick={handleClose}>
-                  {localeNames[l]}
-                </MenuItem>
-              </Link>
-            ))}
-          </Menu>
-        </Toolbar>
-      </AppBar>
+      <TopNavBar />
 
       <Container component="main" maxWidth="md" sx={{ my: '1em' }}>
         <Grid container spacing={4}>
@@ -282,7 +198,10 @@ const Home: NextPage = () => {
           gtag('config', 'G-BR5JBVCH9L');
         `}
       </Script>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-BR5JBVCH9L" strategy="afterInteractive" />
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-BR5JBVCH9L"
+        strategy="afterInteractive"
+      />
     </>
   )
 }
