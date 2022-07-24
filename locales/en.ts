@@ -19,6 +19,7 @@ export const en = {
   socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
 
   actionClose: 'Close',
+  actionLanguage: 'Language',
 } as const
 
 export type TranslationKeys = keyof typeof en

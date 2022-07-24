@@ -12,19 +12,15 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
 import InstagramIcon from '@mui/icons-material/Instagram'
+import LanguageIcon from '@mui/icons-material/Language'
 // import TelegramIcon from '@mui/icons-material/Telegram'
-import TranslateIcon from '@mui/icons-material/Translate'
 
+import type { LocaleCode } from 'locales'
 import profileAvatar from 'public/lev-avatar.jpg'
-import { ESocialLinks } from 'src/data'
-
-const localeNames: Record<string, string> = {
-  en: 'English',
-  uk: 'Українська',
-}
+import { ELocaleNames, ESocialLinks } from 'src/data'
 
 export const TopNavBar: FC = () => {
-  const { locale, locales = [] } = useRouter()
+  const { locale, locales = [] } = useRouter() as { locale: LocaleCode; locales: LocaleCode[] }
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -49,11 +45,9 @@ export const TopNavBar: FC = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           @save.lev.sma
         </Typography>
-
         <IconButton color="secondary" size="large" href={ESocialLinks.instagram} title="Instagram">
           <InstagramIcon />
         </IconButton>
-
         {/* <IconButton
           color="primary"
           disabled
@@ -63,7 +57,6 @@ export const TopNavBar: FC = () => {
         >
           <TelegramIcon />
         </IconButton> */}
-
         <IconButton
           size="large"
           aria-label="account of current user"
@@ -72,7 +65,7 @@ export const TopNavBar: FC = () => {
           onClick={handleMenu}
           color="inherit"
         >
-          <TranslateIcon />
+          <LanguageIcon />
         </IconButton>
         <Menu
           MenuListProps={{
@@ -85,10 +78,10 @@ export const TopNavBar: FC = () => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          {locales.map((l: string) => (
+          {locales.map((l) => (
             <Link key={l} href={`/${l === 'en' ? '' : l}`} hrefLang={l} locale={false} passHref>
               <MenuItem component="a" selected={l === locale} onClick={handleClose}>
-                {localeNames[l]}
+                {ELocaleNames[l]}
               </MenuItem>
             </Link>
           ))}

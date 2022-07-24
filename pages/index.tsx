@@ -15,6 +15,7 @@ import PaymentIcon from '@mui/icons-material/Payment'
 
 import infoImage from 'public/img/1.jpeg'
 import { BaseCssSeo } from 'src/components/BaseCssSeo'
+import { BaseFooter } from 'src/components/BaseFooter'
 import { BaseScripts } from 'src/components/BaseScripts'
 import { CreditCard } from 'src/components/CreditCard'
 import { TopNavBar } from 'src/components/TopNavBar'
@@ -124,7 +125,7 @@ const Home: NextPage = () => {
       </Container>
 
       <Container component="footer" maxWidth="md">
-        &nbsp;
+        <BaseFooter />
         {/* <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"

@@ -1,3 +1,8 @@
+export enum ELocaleNames {
+  en = 'English',
+  uk = 'Українська',
+}
+
 export enum ESocialLinks {
   instagram = 'https://instagram.com/save.lev.sma',
   instagramMom = 'https://instagram.com/maryklimenko',

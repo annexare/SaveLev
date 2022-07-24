@@ -21,4 +21,5 @@ export const uk: Translation = {
   socialNetworksInfo: 'Ви можете знайти мої фото, відео та всі оновлення тут:',
 
   actionClose: 'Закрити',
+  actionLanguage: 'Мова',
 } as const
