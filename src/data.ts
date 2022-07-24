@@ -1,3 +1,9 @@
+import type { TCurrency } from './types'
+
+export const MONO_JAR = 'https://send.monobank.ua/jar/hbxwPtEkH'
+export const PAYPAL_EMAIL = 'olivia.ua@gmail.com'
+export const WEBSITE_URL = 'https://save-lev.com'
+
 export enum ELocaleNames {
   en = 'English',
   uk = 'Українська',
@@ -12,8 +18,7 @@ export enum ESocialLinks {
 
 export interface ICreditCard {
   number: string
-  currency: 'EUR' | 'UAH' | 'USD'
-  iban: string
+  currency: TCurrency
   details: string[]
 }
 
@@ -21,7 +26,6 @@ export const creditCards: ICreditCard[] = [
   {
     number: '4149629359490810',
     currency: 'UAH',
-    iban: '',
     details: [
       'Установа банку - ПриватБанк',
       'МФО банку - 305299',
@@ -36,7 +40,6 @@ export const creditCards: ICreditCard[] = [
   {
     number: '4149629359489705',
     currency: 'EUR',
-    iban: '',
     details: [
       'BENEFICIARY - KOTLIARCHYK MARIIA',
       'IBAN - UA593052990262026400936482562',
@@ -51,7 +54,6 @@ export const creditCards: ICreditCard[] = [
   {
     number: '4149629359487469',
     currency: 'USD',
-    iban: '',
     details: [
       'BENEFICIARY - KOTLIARCHYK MARIIA',
       'IBAN - UA293052990262046400936482296',
@@ -64,7 +66,3 @@ export const creditCards: ICreditCard[] = [
     ],
   },
 ]
-
-export const paypalEmail = 'olivia.ua@gmail.com'
-
-export const websiteUrl = 'https://save-lev.com'

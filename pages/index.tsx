@@ -13,18 +13,36 @@ import Typography from '@mui/material/Typography'
 
 import PaymentIcon from '@mui/icons-material/Payment'
 
+import { trackSelectEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
-import { BaseScripts } from 'src/components/BaseScripts'
 import { CreditCard } from 'src/components/CreditCard'
 import { TopNavBar } from 'src/components/TopNavBar'
 import { InstagramButton } from 'src/components/social/InstagramButton'
-import { ESocialLinks, creditCards, paypalEmail } from 'src/data'
+import { ESocialLinks, creditCards, MONO_JAR, PAYPAL_EMAIL } from 'src/data'
 
 import { LocaleContext } from './_app'
 
 const Home: NextPage = () => {
   const { t } = useContext(LocaleContext)
+
+  const handleCopyPayPal = () => {
+    trackSelectEvent('paypal', {
+      item_id: PAYPAL_EMAIL,
+      item_name: `PayPal ${PAYPAL_EMAIL}`,
+      item_category: 'paypal',
+      currency: 'USD',
+    })
+  }
+
+  const handleOpenMonoJar = () => {
+    trackSelectEvent('monojar', {
+      item_id: MONO_JAR,
+      item_name: `Mono ${MONO_JAR}`,
+      item_category: 'monojar',
+      currency: 'UAH',
+    })
+  }
 
   return (
     <>
@@ -77,7 +95,7 @@ const Home: NextPage = () => {
                     <Typography color="text.secondary" gutterBottom variant="subtitle2">
                       PayPal
                     </Typography>
-                    <Typography>{paypalEmail}</Typography>
+                    <Typography onCopy={handleCopyPayPal}>{PAYPAL_EMAIL}</Typography>
                   </CardContent>
                 </Card>
               </Grid>
@@ -91,9 +109,10 @@ const Home: NextPage = () => {
                   </CardContent>
                   <CardActions>
                     <Button
-                      href="https://send.monobank.ua/jar/hbxwPtEkH"
+                      href={MONO_JAR}
                       size="small"
                       startIcon={<PaymentIcon />}
+                      onClick={handleOpenMonoJar}
                     >
                       {t.monoDonate}
                     </Button>
@@ -133,8 +152,6 @@ const Home: NextPage = () => {
           Powered by <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
         </a> */}
       </Container>
-
-      <BaseScripts />
     </>
   )
 }

@@ -1,10 +1,12 @@
 import { createContext, useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
 
-import * as locales from '../locales'
+import type { LocaleCode, Translation } from 'locales'
+import * as locales from 'locales'
+import { trackPageView } from 'src/analytics'
 
 interface ILocaleContext {
-  t: locales.Translation
+  t: Translation
   setLocale: (locale: 'en' | 'uk') => void
 }
 
@@ -14,20 +16,32 @@ export const LocaleContext = createContext<ILocaleContext>({
 })
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const { locale } = router
-  const [t, setT] = useState<locales.Translation>(locales[locale as locales.LocaleCode])
-  const setLocale = (l: 'en' | 'uk') => {
+  const { events, locale } = router
+  const [t, setT] = useState<Translation>(locales[locale as LocaleCode])
+  const setLocale = (l: LocaleCode) => {
     setT(locales[l])
   }
 
+  // GA events
   useEffect(() => {
-    setLocale(router.locale as locales.LocaleCode)
-  }, [router.locale])
+    events.on('routeChangeComplete', trackPageView)
+
+    return () => {
+      events.off('routeChangeComplete', trackPageView)
+    }
+  }, [events])
+
+  // Update
+  useEffect(() => {
+    setLocale(locale as LocaleCode)
+  }, [locale])
 
   return (
-    <LocaleContext.Provider value={{ t, setLocale }}>
-      <Component {...pageProps} />
-    </LocaleContext.Provider>
+    <>
+      <LocaleContext.Provider value={{ t, setLocale }}>
+        <Component {...pageProps} />
+      </LocaleContext.Provider>
+    </>
   )
 }
 

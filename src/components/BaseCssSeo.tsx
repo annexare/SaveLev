@@ -4,7 +4,7 @@ import { NextSeo, SocialProfileJsonLd } from 'next-seo'
 import CssBaseline from '@mui/material/CssBaseline'
 
 import mainLevPhoto from 'public/img/4.jpg'
-import { ESocialLinks, websiteUrl } from 'src/data'
+import { ESocialLinks, WEBSITE_URL } from 'src/data'
 import { useTranslation } from 'src/hooks/useTranslation'
 
 export { mainLevPhoto }
@@ -22,7 +22,7 @@ export const BaseCssSeo: FC = () => {
         openGraph={{
           images: [
             {
-              url: websiteUrl + mainLevPhoto.src,
+              url: WEBSITE_URL + mainLevPhoto.src,
               width: mainLevPhoto.width,
               height: mainLevPhoto.height,
               alt: t.name,
@@ -36,7 +36,7 @@ export const BaseCssSeo: FC = () => {
       <SocialProfileJsonLd
         type="Person"
         name={t.name}
-        url={websiteUrl}
+        url={WEBSITE_URL}
         sameAs={[ESocialLinks.instagram]}
       />
     </>
