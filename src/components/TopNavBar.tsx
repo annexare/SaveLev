@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -12,7 +12,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
 import InstagramIcon from '@mui/icons-material/Instagram'
-import TelegramIcon from '@mui/icons-material/Telegram'
+// import TelegramIcon from '@mui/icons-material/Telegram'
 import TranslateIcon from '@mui/icons-material/Translate'
 
 import profileAvatar from 'public/lev-avatar.jpg'
@@ -23,7 +23,7 @@ const localeNames: Record<string, string> = {
   uk: 'Українська',
 }
 
-export const TopNavBar = () => {
+export const TopNavBar: FC = () => {
   const { locale, locales = [] } = useRouter()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
@@ -49,10 +49,12 @@ export const TopNavBar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           @save.lev.sma
         </Typography>
+
         <IconButton color="secondary" size="large" href={ESocialLinks.instagram} title="Instagram">
           <InstagramIcon />
         </IconButton>
-        <IconButton
+
+        {/* <IconButton
           color="primary"
           disabled
           size="large"
@@ -60,7 +62,8 @@ export const TopNavBar = () => {
           title="Telegram"
         >
           <TelegramIcon />
-        </IconButton>
+        </IconButton> */}
+
         <IconButton
           size="large"
           aria-label="account of current user"

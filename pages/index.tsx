@@ -11,7 +11,6 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
-import InstagramIcon from '@mui/icons-material/Instagram'
 import PaymentIcon from '@mui/icons-material/Payment'
 
 import infoImage from 'public/img/1.jpeg'
@@ -19,6 +18,7 @@ import { BaseCssSeo } from 'src/components/BaseCssSeo'
 import { BaseScripts } from 'src/components/BaseScripts'
 import { CreditCard } from 'src/components/CreditCard'
 import { TopNavBar } from 'src/components/TopNavBar'
+import { InstagramButton } from 'src/components/social/InstagramButton'
 import { ESocialLinks, creditCards, paypalEmail } from 'src/data'
 
 import { LocaleContext } from './_app'
@@ -66,12 +66,12 @@ const Home: NextPage = () => {
 
             <Grid container spacing={1}>
               {creditCards.map((card) => (
-                <Grid key={card.number} item xs={6} md={12}>
+                <Grid key={card.number} item xs={12} sm={6} md={12}>
                   <CreditCard {...card} />
                 </Grid>
               ))}
 
-              <Grid item xs={6} md={12}>
+              <Grid item xs={12} sm={6} md={12}>
                 <Card elevation={2} raised sx={{ flex: 1 }}>
                   <CardContent>
                     <Typography color="text.secondary" gutterBottom variant="subtitle2">
@@ -82,7 +82,7 @@ const Home: NextPage = () => {
                 </Card>
               </Grid>
 
-              <Grid item xs={6} md={12}>
+              <Grid item xs={12} sm={6} md={12}>
                 <Card elevation={2} raised sx={{ flex: 1 }}>
                   <CardContent>
                     <Typography color="text.secondary" gutterBottom variant="subtitle2">
@@ -108,38 +108,17 @@ const Home: NextPage = () => {
 
             <Typography paragraph>{t.socialNetworksInfo}</Typography>
 
-            <Typography paragraph>
-              <Button
-                color="secondary"
-                href={ESocialLinks.instagram}
-                startIcon={<InstagramIcon />}
-                variant="outlined"
-              >
-                {t.socialMy}&nbsp;Instagram
-              </Button>
-            </Typography>
+            <InstagramButton href={ESocialLinks.instagram}>
+              {t.socialMy}&nbsp;Instagram
+            </InstagramButton>
 
-            <Typography paragraph>
-              <Button
-                color="secondary"
-                href={ESocialLinks.instagramMom}
-                startIcon={<InstagramIcon />}
-                variant="outlined"
-              >
-                {t.socialMom}&nbsp;Instagram
-              </Button>
-            </Typography>
+            <InstagramButton href={ESocialLinks.instagramMom}>
+              {t.socialMom}&nbsp;Instagram
+            </InstagramButton>
 
-            <Typography paragraph>
-              <Button
-                color="secondary"
-                href={ESocialLinks.instagramDad}
-                startIcon={<InstagramIcon />}
-                variant="outlined"
-              >
-                {t.socialDad}&nbsp;Instagram
-              </Button>
-            </Typography>
+            <InstagramButton href={ESocialLinks.instagramDad}>
+              {t.socialDad}&nbsp;Instagram
+            </InstagramButton>
           </Grid>
         </Grid>
       </Container>
