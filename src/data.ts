@@ -66,3 +66,5 @@ export const creditCards: ICreditCard[] = [
 ]
 
 export const paypalEmail = 'olivia.ua@gmail.com'
+
+export const websiteUrl = 'https://save-lev.com'

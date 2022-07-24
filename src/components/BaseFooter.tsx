@@ -1,20 +1,19 @@
-import { FC, useContext } from 'react'
+import { FC } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
 import MuiLink from '@mui/material/Link'
 import Typography from '@mui/material/Typography'
 
 import LanguageIcon from '@mui/icons-material/Language'
 
 import type { LocaleCode } from 'locales'
-import { LocaleContext } from 'pages/_app'
 import { ELocaleNames } from 'src/data'
+import { useTranslation } from 'src/hooks/useTranslation'
 
 export const BaseFooter: FC = () => {
-  const { t, setLocale } = useContext(LocaleContext)
+  const t = useTranslation()
   const { locale, locales = [] } = useRouter() as { locale: LocaleCode; locales: LocaleCode[] }
 
   return (
@@ -28,7 +27,7 @@ export const BaseFooter: FC = () => {
         <LanguageIcon />
         &nbsp;{t.actionLanguage}:
         {locales.map((l, index) => (
-          <>
+          <span key={l}>
             &nbsp;
             {l === locale ? (
               ELocaleNames[l]
@@ -38,7 +37,7 @@ export const BaseFooter: FC = () => {
               </Link>
             )}
             {index < locales.length - 1 ? ',' : null}
-          </>
+          </span>
         ))}
       </Typography>
     </Box>
