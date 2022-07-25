@@ -1,6 +1,7 @@
 import { TCurrency, TForeignCurrency } from './types'
 
 export const fundraisingGoalUSD = 2100000
+export const fundraisingStartDate = '2022-07-21'
 
 export interface IFundraisingStatus {
   MonoJar: number
@@ -32,8 +33,6 @@ export const usdToEur = NBU.USD / NBU.EUR
 export const totalInUAH = numberToFixed(
   MonoJar + PayPal * NBU.USD + Privat.UAH + Privat.EUR * NBU.EUR + Privat.USD * NBU.USD,
 )
-
-export const fundraisingStartDate = new Date('2022-07-21 09:00')
 
 export const fundraisingGoals: Record<TCurrency, number> = {
   UAH: numberToFixed(fundraisingGoalUSD * NBU.USD),
