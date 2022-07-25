@@ -17,6 +17,7 @@ import { trackSelectEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
 import { CreditCard } from 'src/components/CreditCard'
+import { FundraisingStatus } from 'src/components/FundraisingStatus'
 import { PayPalButton } from 'src/components/PayPal'
 import { TopNavBar } from 'src/components/TopNavBar'
 import { InstagramButton } from 'src/components/social/InstagramButton'
@@ -84,6 +85,10 @@ const Home: NextPage = () => {
             </Typography>
 
             <Grid container spacing={1}>
+              <Grid item xs={12}>
+                <FundraisingStatus />
+              </Grid>
+
               {creditCards.map((card) => (
                 <Grid key={card.number} item xs={12} sm={6} md={12}>
                   <CreditCard {...card} />

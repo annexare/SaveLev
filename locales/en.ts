@@ -3,6 +3,11 @@ export const en = {
   name: 'Lev Kotliarchyk',
   description:
     'At the age of 8.5 months, I was diagnosed with SMA. But I want to live, help me heal.',
+  fundraisingTotal: 'Total funds for Zolgensma',
+  fundraisingDays: (days: number): string => {
+    const lastDigit: number = Number(`${days}`.split('').pop())
+    return `in ${days} day${lastDigit === 1 ? '' : 's'}`
+  },
   infoH1: 'Hi, my name is Lev and I was diagnosed with SMA',
   infoBody: [
     'Unfortunately, I was diagnosed with SMA when I was 8.5 months old.',
@@ -12,11 +17,13 @@ export const en = {
   monoBanka: 'Monobank Jar',
   monoDonate: 'Donate',
   paymentDetails: 'Fundraising',
-  socialDad: 'My dad\'s',
-  socialMom: 'My mom\'s',
+  socialDad: "My dad's",
+  socialMom: "My mom's",
   socialMy: 'My',
   socialNetworks: 'Social networks',
   socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
+  thankYou: 'Thank you very much!',
+  zolgensmaPrice: 'Approximate price for Zolgensma is $2.1M.',
 
   actionClose: 'Close',
   actionLanguage: 'Language',

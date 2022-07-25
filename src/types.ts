@@ -1,1 +1,2 @@
-export type TCurrency = 'EUR' | 'UAH' | 'USD'
+export type TForeignCurrency = 'EUR' | 'USD'
+export type TCurrency = 'UAH' | TForeignCurrency
