@@ -6,7 +6,7 @@ export const uk: Translation = {
   description:
     'У віці 8.5 місяців у мене діагностували СМА. Але я хочу жити, допоможіть мені вилікуватись.',
   fundraisingTotal: 'Всього зібрано на Zolgensma',
-  fundraisingDays: (days: number): string => {
+  fundraisingDays: (days = 0): string => {
     const lastDigit: number = Number(`${days}`.split('').pop())
     let plural = 'днів'
 

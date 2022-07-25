@@ -3,7 +3,7 @@ export const en = {
   name: 'Lev Kotliarchyk',
   description:
     'At the age of 8.5 months, I was diagnosed with SMA. But I want to live, help me heal.',
-  fundraisingTotal: 'Total funds for Zolgensma',
+  fundraisingTotal: 'Total funds raised for Zolgensma',
   fundraisingDays: (days = 0): string => {
     const lastDigit: number = Number(`${days}`.split('').pop())
     return `in ${days} day${lastDigit === 1 ? '' : 's'}`

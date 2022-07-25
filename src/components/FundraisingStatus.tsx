@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { between } from 'duration-fns'
+import { between, toDays } from 'duration-fns'
 
 import LinearProgress from '@mui/material/LinearProgress'
 import Typography from '@mui/material/Typography'
@@ -9,7 +9,8 @@ import { styled } from '@mui/material/styles'
 import { fundraisingStartDate, fundraisingGoals, totalInUAH } from 'src/fundraising'
 import { useTranslation } from 'src/hooks/useTranslation'
 
-const progressDays = between(fundraisingStartDate, new Date().toDateString()).days
+const todayDate = new Date().toISOString().split('T')[0]
+const progressDays = between(fundraisingStartDate, todayDate).days
 const progressPercent = (totalInUAH / fundraisingGoals.UAH) * 100
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
