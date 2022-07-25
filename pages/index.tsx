@@ -17,6 +17,7 @@ import { trackSelectEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
 import { CreditCard } from 'src/components/CreditCard'
+import { PayPalButton } from 'src/components/PayPal'
 import { TopNavBar } from 'src/components/TopNavBar'
 import { InstagramButton } from 'src/components/social/InstagramButton'
 import { ESocialLinks, creditCards, MONO_JAR, PAYPAL_EMAIL } from 'src/data'
@@ -93,10 +94,15 @@ const Home: NextPage = () => {
                 <Card elevation={2} raised sx={{ flex: 1 }}>
                   <CardContent>
                     <Typography color="text.secondary" gutterBottom variant="subtitle2">
-                      PayPal
+                      PayPal:{' '}
+                      <Typography component="span" color="HighlightText" onCopy={handleCopyPayPal}>
+                        {PAYPAL_EMAIL}
+                      </Typography>
                     </Typography>
-                    <Typography onCopy={handleCopyPayPal}>{PAYPAL_EMAIL}</Typography>
                   </CardContent>
+                  <CardActions>
+                    <PayPalButton />
+                  </CardActions>
                 </Card>
               </Grid>
 

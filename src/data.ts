@@ -1,6 +1,7 @@
-import type { TCurrency } from './types'
+import type { TCurrency } from 'src/types'
 
 export const MONO_JAR = 'https://send.monobank.ua/jar/hbxwPtEkH'
+export const PAYPAL_DONATE_URL = 'https://www.paypal.com/donate/?hosted_button_id=KNFHWWGSVH2JN'
 export const PAYPAL_EMAIL = 'olivia.ua@gmail.com'
 export const WEBSITE_URL = 'https://save-lev.com'
 
