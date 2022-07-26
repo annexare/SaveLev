@@ -11,11 +11,11 @@ export interface IFundraisingStatus {
 }
 
 export const fundraisingStatus: IFundraisingStatus = {
-  MonoJar: 722248.7,
-  PayPal: 4634.48,
+  MonoJar: 769687.5,
+  PayPal: 5162.08,
   Privat: {
-    UAH: 1768452,
-    USD: 35,
+    UAH: 1957288,
+    USD: 531,
     EUR: 438,
   },
   NBU: {
