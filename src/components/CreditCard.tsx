@@ -13,7 +13,7 @@ import Typography from '@mui/material/Typography'
 import PaymentIcon from '@mui/icons-material/Payment'
 
 import type { TItemCategory } from 'src/analytics'
-import { trackSelectEvent } from 'src/analytics'
+import { IGAItem, trackViewDetailsEvent, trackSelectItemEvent } from 'src/analytics'
 import { ICreditCard } from 'src/data'
 import { formatCreditCard } from 'src/utils'
 import { useTranslation } from 'src/hooks/useTranslation'
@@ -26,12 +26,16 @@ export const CreditCard: FC<ICreditCard> = (card) => {
     (card: ICreditCard, isInfo = false) =>
     () => {
       const category: TItemCategory = isInfo ? 'cardinfo' : 'card'
-      trackSelectEvent(category, {
+      const item: IGAItem = {
         item_id: card.number,
         item_name: `${card.currency} ${card.number}`,
         item_category: category,
         currency: card.currency,
-      })
+      }
+      if (isInfo) {
+        trackViewDetailsEvent(item)
+      }
+      trackSelectItemEvent(category, item)
     }
 
   const handleCloseDetails = () => {
@@ -40,7 +44,7 @@ export const CreditCard: FC<ICreditCard> = (card) => {
 
   const handleShowDetails = (card: ICreditCard) => () => {
     setShowDetails(true)
-    trackCardNumberEvent(card, true)
+    setTimeout(trackCardNumberEvent(card, true), 0)
   }
 
   const hasDetails = Array.isArray(card.details) && card.details.length > 0
@@ -48,7 +52,6 @@ export const CreditCard: FC<ICreditCard> = (card) => {
     <Button
       color="inherit"
       size="small"
-      // startIcon={<PaymentIcon />}
       sx={{ alignSelf: 'center', whiteSpace: 'nowrap' }}
       variant="outlined"
       onClick={handleShowDetails(card)}

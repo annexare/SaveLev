@@ -9,11 +9,12 @@ import Typography from '@mui/material/Typography'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import InfoIcon from '@mui/icons-material/InfoOutlined'
 
+import { IGAItem, trackViewDetailsEvent } from 'src/analytics'
 import { useTranslation } from 'src/hooks/useTranslation'
 
 enum EPanels {
-  info1 = 'panel1',
-  info2 = 'panel2',
+  info1 = 'SMA Info 1',
+  info2 = 'SMA Info 1',
 }
 
 export const SmaInfo: FC = () => {
@@ -24,12 +25,20 @@ export const SmaInfo: FC = () => {
   const handleChange = (panel: EPanels) => (event: SyntheticEvent, isExpanded: boolean) => {
     const next = isExpanded ? panel : false
 
-    if (expanded && next) {
-      setTimeout(() => {
-        if (topEl?.current) {
-          topEl.current.scrollIntoView({ behavior: 'smooth' })
-        }
-      }, 100)
+    if (next) {
+      trackViewDetailsEvent({
+        item_id: next,
+        item_name: next,
+        item_category: 'info',
+      })
+
+      if (expanded) {
+        setTimeout(() => {
+          if (topEl?.current) {
+            topEl.current.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
     }
 
     setExpanded(next)

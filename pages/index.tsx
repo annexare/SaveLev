@@ -14,7 +14,7 @@ import Typography from '@mui/material/Typography'
 import PaymentIcon from '@mui/icons-material/Payment'
 import TollIcon from '@mui/icons-material/Toll'
 
-import { trackSelectEvent } from 'src/analytics'
+import { IGAItem, trackSelectItemEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
 import { CreditCard } from 'src/components/CreditCard'
@@ -31,21 +31,23 @@ const Home: NextPage = () => {
   const { t } = useContext(LocaleContext)
 
   const handleCopyPayPal = () => {
-    trackSelectEvent('paypal', {
+    const item: IGAItem = {
       item_id: PAYPAL_EMAIL,
       item_name: `PayPal ${PAYPAL_EMAIL}`,
       item_category: 'paypal',
       currency: 'USD',
-    })
+    }
+    trackSelectItemEvent('paypal', item)
   }
 
   const handleOpenMonoJar = () => {
-    trackSelectEvent('monojar', {
+    const item: IGAItem = {
       item_id: MONO_JAR,
       item_name: `Mono ${MONO_JAR}`,
       item_category: 'monojar',
       currency: 'UAH',
-    })
+    }
+    trackSelectItemEvent('monojar', item)
   }
 
   return (

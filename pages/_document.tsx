@@ -3,6 +3,8 @@ import Script from 'next/script'
 
 import { GA_TRACKING_ID } from 'src/analytics'
 
+const GA_DEBUG = process.env.NODE_ENV === 'development' ? 'true' : 'false'
+
 export default function Document() {
   return (
     <Html>
@@ -15,24 +17,26 @@ export default function Document() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <body>
-        <Main />
-        <NextScript />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+  function gtag(){window.dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', '${GA_TRACKING_ID}');
+  gtag('config', '${GA_TRACKING_ID}', { debug_mode: ${GA_DEBUG} });
 `,
           }}
         />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
+          async={true}
+          defer={false}
         />
+        <Main />
+        <NextScript />
       </body>
     </Html>
   )

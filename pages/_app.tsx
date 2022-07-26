@@ -3,7 +3,6 @@ import type { AppProps } from 'next/app'
 
 import type { LocaleCode, Translation } from 'locales'
 import * as locales from 'locales'
-import { trackPageView } from 'src/analytics'
 
 interface ILocaleContext {
   t: Translation
@@ -21,15 +20,6 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const setLocale = (l: LocaleCode) => {
     setT(locales[l])
   }
-
-  // GA events
-  useEffect(() => {
-    events.on('routeChangeComplete', trackPageView)
-
-    return () => {
-      events.off('routeChangeComplete', trackPageView)
-    }
-  }, [events])
 
   // Update
   useEffect(() => {
