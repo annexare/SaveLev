@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 import PaymentIcon from '@mui/icons-material/Payment'
+import TollIcon from '@mui/icons-material/Toll'
 
 import { trackSelectEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
@@ -102,7 +103,10 @@ const Home: NextPage = () => {
                   <Typography component="span" fontWeight="bold">
                     PayPal
                   </Typography>
-                  :<Typography onCopy={handleCopyPayPal}>{PAYPAL_EMAIL}</Typography>
+                  :
+                  <Typography sx={{ userSelect: 'all' }} onCopy={handleCopyPayPal}>
+                    {PAYPAL_EMAIL}
+                  </Typography>
                 </Alert>
               </Grid>
 
@@ -111,9 +115,11 @@ const Home: NextPage = () => {
                   icon={<PaymentIcon />}
                   action={
                     <Button
+                      color="inherit"
                       href={MONO_JAR}
                       size="small"
-                      startIcon={<PaymentIcon />}
+                      startIcon={<TollIcon />}
+                      variant="outlined"
                       onClick={handleOpenMonoJar}
                     >
                       {t.monoDonate}

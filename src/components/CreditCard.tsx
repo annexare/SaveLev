@@ -46,9 +46,11 @@ export const CreditCard: FC<ICreditCard> = (card) => {
   const hasDetails = Array.isArray(card.details) && card.details.length > 0
   const detailsAction = hasDetails ? (
     <Button
+      color="inherit"
       size="small"
-      startIcon={<PaymentIcon />}
+      // startIcon={<PaymentIcon />}
       sx={{ alignSelf: 'center', whiteSpace: 'nowrap' }}
+      variant="outlined"
       onClick={handleShowDetails(card)}
     >
       {t.ibanPaymentDetails}
@@ -62,7 +64,9 @@ export const CreditCard: FC<ICreditCard> = (card) => {
           {card.currency}
           {card.currency === 'UAH' ? <>&nbsp;🇺🇦</> : null}
         </AlertTitle>
-        <Typography onCopy={trackCardNumberEvent(card)}>{formatCreditCard(card.number)}</Typography>
+        <Typography sx={{ userSelect: 'all' }} onCopy={trackCardNumberEvent(card)}>
+          {formatCreditCard(card.number)}
+        </Typography>
       </Alert>
       {showDetails ? (
         <Dialog fullWidth maxWidth="sm" open onClose={handleCloseDetails}>
