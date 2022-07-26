@@ -1,9 +1,8 @@
 import { FC, useState } from 'react'
 
+import Alert from '@mui/material/Alert'
+import AlertTitle from '@mui/material/AlertTitle'
 import Button from '@mui/material/Button'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
 import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
@@ -22,15 +21,17 @@ export const CreditCard: FC<ICreditCard> = (card) => {
   const [showDetails, setShowDetails] = useState<boolean>(false)
   const t = useTranslation()
 
-  const trackCardNumberEvent = (card: ICreditCard, isInfo = false) => () => {
-    const category: TItemCategory = isInfo ? 'cardinfo' : 'card'
-    trackSelectEvent(category, {
-      item_id: card.number,
-      item_name: `${card.currency} ${card.number}`,
-      item_category: category,
-      currency: card.currency,
-    })
-  }
+  const trackCardNumberEvent =
+    (card: ICreditCard, isInfo = false) =>
+    () => {
+      const category: TItemCategory = isInfo ? 'cardinfo' : 'card'
+      trackSelectEvent(category, {
+        item_id: card.number,
+        item_name: `${card.currency} ${card.number}`,
+        item_category: category,
+        currency: card.currency,
+      })
+    }
 
   const handleCloseDetails = () => {
     setShowDetails(false)
@@ -45,29 +46,13 @@ export const CreditCard: FC<ICreditCard> = (card) => {
 
   return (
     <>
-      <Card elevation={1} sx={{ flex: 1, flexGrow: 1 }}>
-        <CardContent>
-          <Typography color="text.secondary" gutterBottom variant="subtitle2">
-            {card.currency}
-            {card.currency === 'UAH' ? <>&nbsp;🇺🇦</> : null}
-          </Typography>
-          <Typography onCopy={trackCardNumberEvent(card)}>
-            {formatCreditCard(card.number)}
-          </Typography>
-        </CardContent>
-        {hasDetails ? (
-          <CardActions>
-            <Button
-              size="small"
-              startIcon={<PaymentIcon />}
-              sx={{ textAlign: 'left' }}
-              onClick={handleShowDetails(card)}
-            >
-              {t.ibanPaymentDetails}
-            </Button>
-          </CardActions>
-        ) : null}
-      </Card>
+      <Alert icon={<PaymentIcon />}>
+        <AlertTitle>
+          {card.currency}
+          {card.currency === 'UAH' ? <>&nbsp;🇺🇦</> : null}
+        </AlertTitle>
+        <Typography onCopy={trackCardNumberEvent(card)}>{formatCreditCard(card.number)}</Typography>
+      </Alert>
       {showDetails ? (
         <Dialog fullWidth maxWidth="sm" open onClose={handleCloseDetails}>
           <DialogTitle>

@@ -2,9 +2,9 @@ import { useContext } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
+import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Container from '@mui/material/Container'
@@ -98,29 +98,18 @@ const Home: NextPage = () => {
               ))}
 
               <Grid item xs={12} sm={6} md={12}>
-                <Card elevation={2} raised sx={{ flex: 1 }}>
-                  <CardContent>
-                    <Typography color="text.secondary" gutterBottom variant="subtitle2">
-                      PayPal:{' '}
-                      <Typography component="span" color="HighlightText" onCopy={handleCopyPayPal}>
-                        {PAYPAL_EMAIL}
-                      </Typography>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <PayPalButton />
-                  </CardActions>
-                </Card>
+                <Alert icon={<PaymentIcon />} action={<PayPalButton />} severity="info">
+                  <Typography component="span" fontWeight="bold">
+                    PayPal
+                  </Typography>
+                  :<Typography onCopy={handleCopyPayPal}>{PAYPAL_EMAIL}</Typography>
+                </Alert>
               </Grid>
 
               <Grid item xs={12} sm={6} md={12}>
-                <Card elevation={2} raised sx={{ flex: 1 }}>
-                  <CardContent>
-                    <Typography color="text.secondary" gutterBottom variant="subtitle2">
-                      {t.monoBanka}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
+                <Alert
+                  icon={<PaymentIcon />}
+                  action={
                     <Button
                       href={MONO_JAR}
                       size="small"
@@ -129,8 +118,10 @@ const Home: NextPage = () => {
                     >
                       {t.monoDonate}
                     </Button>
-                  </CardActions>
-                </Card>
+                  }
+                >
+                  <Typography fontWeight="bold">{t.monoBanka}</Typography>
+                </Alert>
               </Grid>
             </Grid>
 
