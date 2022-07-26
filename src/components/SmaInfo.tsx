@@ -1,4 +1,4 @@
-import { FC, SyntheticEvent, useState } from 'react'
+import { FC, SyntheticEvent, useRef, useState } from 'react'
 
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
@@ -12,21 +12,34 @@ import InfoIcon from '@mui/icons-material/InfoOutlined'
 import { useTranslation } from 'src/hooks/useTranslation'
 
 enum EPanels {
-  info1,
-  info2,
+  info1 = 'panel1',
+  info2 = 'panel2',
 }
 
 export const SmaInfo: FC = () => {
   const t = useTranslation()
+  const topEl = useRef<HTMLDivElement | null>(null)
   const [expanded, setExpanded] = useState<EPanels | false>(false)
 
   const handleChange = (panel: EPanels) => (event: SyntheticEvent, isExpanded: boolean) => {
-    setExpanded(isExpanded ? panel : false)
+    const next = isExpanded ? panel : false
+
+    if (expanded && next) {
+      setTimeout(() => {
+        if (topEl?.current) {
+          topEl.current.scrollIntoView()
+        }
+      }, 100)
+    }
+
+    setExpanded(next)
   }
 
   return (
     <>
-      <Alert severity="info">{t.infoGoal}</Alert>
+      <Alert ref={topEl} severity="info">
+        {t.infoGoal}
+      </Alert>
       <Accordion expanded={expanded === EPanels.info1} onChange={handleChange(EPanels.info1)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
