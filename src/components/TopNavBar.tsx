@@ -16,7 +16,7 @@ import LanguageIcon from '@mui/icons-material/Language'
 // import TelegramIcon from '@mui/icons-material/Telegram'
 
 import type { LocaleCode } from 'locales'
-import profileAvatar from 'public/lev-avatar.jpg'
+import profileAvatar from 'public/lev-avatar.png'
 import { ELocaleNames, ESocialLinks } from 'src/data'
 
 export const TopNavBar: FC = () => {
