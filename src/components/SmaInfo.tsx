@@ -14,7 +14,7 @@ import { useTranslation } from 'src/hooks/useTranslation'
 
 enum EPanels {
   info1 = 'SMA Info 1',
-  info2 = 'SMA Info 1',
+  info2 = 'SMA Info 2',
 }
 
 export const SmaInfo: FC = () => {
