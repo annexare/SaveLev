@@ -3,10 +3,11 @@ import { FC, SyntheticEvent, useState } from 'react'
 import Accordion from '@mui/material/Accordion'
 import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
+import Alert from '@mui/material/Alert'
 import Typography from '@mui/material/Typography'
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
-import InfoIcon from '@mui/icons-material/Info'
+import InfoIcon from '@mui/icons-material/InfoOutlined'
 
 import { useTranslation } from 'src/hooks/useTranslation'
 
@@ -25,7 +26,7 @@ export const SmaInfo: FC = () => {
 
   return (
     <>
-      <Typography paragraph>{t.infoGoal}</Typography>
+      <Alert severity="info">{t.infoGoal}</Alert>
       <Accordion expanded={expanded === EPanels.info1} onChange={handleChange(EPanels.info1)}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
