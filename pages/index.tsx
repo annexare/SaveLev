@@ -93,12 +93,12 @@ const Home: NextPage = () => {
               </Grid>
 
               {creditCards.map((card) => (
-                <Grid key={card.number} item xs={12} sm={6} md={12}>
+                <Grid key={card.number} item xs={12}>
                   <CreditCard {...card} />
                 </Grid>
               ))}
 
-              <Grid item xs={12} sm={6} md={12}>
+              <Grid item xs={12}>
                 <Alert icon={<PaymentIcon />} action={<PayPalButton />} severity="info">
                   <Typography component="span" fontWeight="bold">
                     PayPal
@@ -110,7 +110,7 @@ const Home: NextPage = () => {
                 </Alert>
               </Grid>
 
-              <Grid item xs={12} sm={6} md={12}>
+              <Grid item xs={12}>
                 <Alert
                   icon={<PaymentIcon />}
                   action={
