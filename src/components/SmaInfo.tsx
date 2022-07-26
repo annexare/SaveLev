@@ -27,7 +27,7 @@ export const SmaInfo: FC = () => {
     if (expanded && next) {
       setTimeout(() => {
         if (topEl?.current) {
-          topEl.current.scrollIntoView()
+          topEl.current.scrollIntoView({ behavior: 'smooth' })
         }
       }, 100)
     }
