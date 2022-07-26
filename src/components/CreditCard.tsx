@@ -7,6 +7,7 @@ import Dialog from '@mui/material/Dialog'
 import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
+import Icon from '@mui/material/Icon'
 import Typography from '@mui/material/Typography'
 
 import PaymentIcon from '@mui/icons-material/Payment'
@@ -43,10 +44,20 @@ export const CreditCard: FC<ICreditCard> = (card) => {
   }
 
   const hasDetails = Array.isArray(card.details) && card.details.length > 0
+  const detailsAction = hasDetails ? (
+    <Button
+      size="small"
+      startIcon={<PaymentIcon />}
+      sx={{ alignSelf: 'center', whiteSpace: 'nowrap' }}
+      onClick={handleShowDetails(card)}
+    >
+      {t.ibanPaymentDetails}
+    </Button>
+  ) : undefined
 
   return (
     <>
-      <Alert icon={<PaymentIcon />}>
+      <Alert icon={<PaymentIcon />} action={detailsAction}>
         <AlertTitle>
           {card.currency}
           {card.currency === 'UAH' ? <>&nbsp;🇺🇦</> : null}
@@ -56,11 +67,14 @@ export const CreditCard: FC<ICreditCard> = (card) => {
       {showDetails ? (
         <Dialog fullWidth maxWidth="sm" open onClose={handleCloseDetails}>
           <DialogTitle>
+            <Icon>
+              <PaymentIcon />
+            </Icon>{' '}
             {card.currency}: {t.ibanPaymentDetails}
           </DialogTitle>
-          <DialogContent>
+          <DialogContent dividers>
             {card.details.map((line, index) => (
-              <Typography key={index} paragraph fontSize=".8em">
+              <Typography key={index} paragraph>
                 {line}
               </Typography>
             ))}

@@ -29,7 +29,7 @@ export const FundraisingStatus: FC = () => {
 
   return (
     <BootstrapTooltip title={t.zolgensmaPrice}>
-      <Typography color="green" paragraph gutterBottom>
+      <Typography color="green" paragraph gutterBottom marginBottom="2em">
         {t.fundraisingTotal}: <strong>{progressPercent.toFixed(1)}%</strong>{' '}
         {t.fundraisingDays(progressDays)}.
         <br />
