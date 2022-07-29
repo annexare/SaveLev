@@ -54,12 +54,13 @@ export const TopNavBar: FC = () => {
           <FacebookIcon />
         </IconButton>
         <IconButton
-          size="large"
           aria-label={t.actionLanguage}
           aria-controls="menu-appbar"
           aria-haspopup="true"
-          onClick={handleMenu}
           color="inherit"
+          size="large"
+          title={t.actionLanguage}
+          onClick={handleMenu}
         >
           <LanguageIcon />
         </IconButton>
