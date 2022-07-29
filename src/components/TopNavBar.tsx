@@ -14,14 +14,15 @@ import Typography from '@mui/material/Typography'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import LanguageIcon from '@mui/icons-material/Language'
-// import TelegramIcon from '@mui/icons-material/Telegram'
 
 import type { LocaleCode } from 'locales'
 import profileAvatar from 'public/lev-avatar.png'
 import { ELocaleNames, ESocialLinks } from 'src/data'
+import { useTranslation } from 'src/hooks/useTranslation'
 
 export const TopNavBar: FC = () => {
   const { locale, locales = [] } = useRouter() as { locale: LocaleCode; locales: LocaleCode[] }
+  const t = useTranslation()
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -54,7 +55,7 @@ export const TopNavBar: FC = () => {
         </IconButton>
         <IconButton
           size="large"
-          aria-label="account of current user"
+          aria-label={t.actionLanguage}
           aria-controls="menu-appbar"
           aria-haspopup="true"
           onClick={handleMenu}
@@ -71,6 +72,7 @@ export const TopNavBar: FC = () => {
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
+          title={t.actionLanguage}
           onClose={handleClose}
         >
           {locales.map((l) => (
