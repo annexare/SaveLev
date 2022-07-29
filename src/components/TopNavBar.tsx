@@ -44,7 +44,7 @@ export const TopNavBar: FC = () => {
           <Image src={profileAvatar} alt="Lev" layout="fill" />
         </Avatar>
         &nbsp;
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography component="div" sx={{ flexGrow: 1 }}>
           @save.lev.sma
         </Typography>
         <IconButton color="secondary" size="large" href={ESocialLinks.instagram} title="Instagram">
