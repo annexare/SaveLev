@@ -22,6 +22,7 @@ import { FundraisingStatus } from 'src/components/FundraisingStatus'
 import { PayPalButton } from 'src/components/PayPal'
 import { SmaInfo } from 'src/components/SmaInfo'
 import { TopNavBar } from 'src/components/TopNavBar'
+import { FacebookButton } from 'src/components/social/FacebookButton'
 import { InstagramButton } from 'src/components/social/InstagramButton'
 import { ESocialLinks, creditCards, MONO_JAR, PAYPAL_EMAIL } from 'src/data'
 
@@ -142,6 +143,10 @@ const Home: NextPage = () => {
             <InstagramButton href={ESocialLinks.instagram}>
               {t.socialMy}&nbsp;Instagram
             </InstagramButton>
+
+            <FacebookButton href={ESocialLinks.facebook}>
+              {t.socialMy}&nbsp;Facebook
+            </FacebookButton>
 
             <InstagramButton href={ESocialLinks.instagramMom}>
               {t.socialMom}&nbsp;Instagram

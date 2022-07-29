@@ -11,6 +11,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 
+import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import LanguageIcon from '@mui/icons-material/Language'
 // import TelegramIcon from '@mui/icons-material/Telegram'
@@ -48,15 +49,9 @@ export const TopNavBar: FC = () => {
         <IconButton color="secondary" size="large" href={ESocialLinks.instagram} title="Instagram">
           <InstagramIcon />
         </IconButton>
-        {/* <IconButton
-          color="primary"
-          disabled
-          size="large"
-          href={ESocialLinks.telegram}
-          title="Telegram"
-        >
-          <TelegramIcon />
-        </IconButton> */}
+        <IconButton color="primary" size="large" href={ESocialLinks.facebook} title="Facebook">
+          <FacebookIcon />
+        </IconButton>
         <IconButton
           size="large"
           aria-label="account of current user"

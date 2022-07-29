@@ -37,7 +37,7 @@ export const BaseCssSeo: FC = () => {
         type="Person"
         name={t.name}
         url={WEBSITE_URL}
-        sameAs={[ESocialLinks.instagram]}
+        sameAs={[ESocialLinks.facebook, ESocialLinks.instagram]}
       />
     </>
   )
