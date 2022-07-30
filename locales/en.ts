@@ -40,6 +40,7 @@ export const en = {
   socialNetworks: 'Social networks',
   socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
   thankYou: 'Thank you very much!',
+  tv: 'About us on TV',
   zolgensmaPrice: 'Approximate price for Zolgensma is $2.1M.',
 
   actionClose: 'Close',

@@ -50,6 +50,7 @@ export const uk: Translation = {
   socialNetworks: 'Соціальні мережі',
   socialNetworksInfo: 'Ви можете знайти мої фото, відео та всі оновлення тут:',
   thankYou: 'Щиро дякуємо вам!',
+  tv: 'Про нас на ТБ',
   zolgensmaPrice: 'Приблизна вартість Zolgensma — 2.1 мільйони доларів США.',
 
   actionClose: 'Закрити',
