@@ -4,10 +4,8 @@ export const en = {
   description:
     'At the age of 8.5 months, I was diagnosed with SMA. But I want to live, help me heal.',
   fundraisingTotal: 'Total funds raised',
-  fundraisingDays: (days = 0): string => {
-    const lastDigit: number = Number(`${days}`.split('').pop())
-    return `in ${days} day${lastDigit === 1 ? '' : 's'}`
-  },
+  fundraisingDays: (days = 0): string =>
+    `in ${days} day${`${days}`.endsWith('1') && !`${days}`.endsWith('11') ? '' : 's'}`,
   infoH1: 'Hi, my name is Lev and I was diagnosed with SMA',
   infoBody: [
     'Unfortunately, I was diagnosed with SMA when I was 8.5 months old.',

@@ -10,7 +10,7 @@ export const uk: Translation = {
     const lastDigit: number = Number(`${days}`.split('').pop())
     let plural = 'днів'
 
-    if (lastDigit === 1) {
+    if (lastDigit === 1 && !`${days}`.endsWith('11')) {
       plural = 'день'
     } else if (lastDigit >= 2 && lastDigit <= 4) {
       plural = 'дні'

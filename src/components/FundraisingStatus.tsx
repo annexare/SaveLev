@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { between } from 'duration-fns'
+import dayjs from 'dayjs'
 
 import LinearProgress from '@mui/material/LinearProgress'
 import Typography from '@mui/material/Typography'
@@ -10,7 +10,7 @@ import { fundraisingStartDate, fundraisingGoals, totalInUAH } from 'src/fundrais
 import { useTranslation } from 'src/hooks/useTranslation'
 
 const todayDate = new Date().toISOString().split('T')[0]
-const progressDays = between(fundraisingStartDate, todayDate).days
+const progressDays = dayjs(todayDate).diff(fundraisingStartDate, 'days')
 const progressPercent = (totalInUAH / fundraisingGoals.UAH) * 100
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
