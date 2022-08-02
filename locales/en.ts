@@ -25,7 +25,7 @@ export const en = {
   infoSMA2: [
     'All funds will go exclusively for treatment and what is critically necessary for it.',
     'In Ukraine, there is no free program from the state, as well as treatment for SMA.',
-    'The cost of 1 injection of Zolgensma costs about $2.1 million (the exact amount in UAH depends on the exchange rates). Plus long-term rehabilitation and other expenses.',
+    'The cost of 1 injection of Zolgensma costs about $2.1 million (the exact amount in UAH depends on the exchange rates). Plus long-term rehabilitation and related expenses.',
     'We are also trying to get into a free treatment program for SMA abroad (in many EU countries, these drugs are registered and purchased at the expense of the state). If we are lucky in this and/or there are funds left after recovery, we will definitely send remaining balance to the treatment of other children with SMA in Ukraine.',
   ],
   ibanPaymentDetails: 'IBAN & Details',
@@ -40,7 +40,7 @@ export const en = {
   thankYou: 'Thank you very much!',
   tv: 'About us on TV',
   zolgensmaPrice:
-    'Approximate price for Zolgensma is $2.1M.\nPlus long-term rehabilitation and other expenses.',
+    'Approximate price for Zolgensma is $2.1M.\nPlus long-term rehabilitation and related expenses.',
 
   actionClose: 'Close',
   actionLanguage: 'Language',
