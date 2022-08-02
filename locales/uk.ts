@@ -12,7 +12,13 @@ export const uk: Translation = {
 
     if (lastDigit === 1 && !`${days}`.endsWith('11')) {
       plural = 'день'
-    } else if (lastDigit >= 2 && lastDigit <= 4) {
+    } else if (
+      lastDigit >= 2 &&
+      lastDigit <= 4 &&
+      !`${days}`.endsWith('12') &&
+      !`${days}`.endsWith('13') &&
+      !`${days}`.endsWith('14')
+    ) {
       plural = 'дні'
     }
 
