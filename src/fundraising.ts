@@ -4,17 +4,23 @@ export const fundraisingGoalUSD = 2100000
 export const fundraisingStartDate = '2022-07-21'
 
 export interface IFundraisingStatus {
-  MonoJar: number
-  PayPal: number
+  Cash: Record<TCurrency, number>
+  MonoJarUAH: number
+  PayPalUSD: number
   Privat: Record<TCurrency, number>
   NBU: Record<TForeignCurrency, number>
 }
 
 export const fundraisingStatus: IFundraisingStatus = {
-  MonoJar: 935245.61,
-  PayPal: 6131.52,
+  Cash: {
+    UAH: 0,
+    USD: 0,
+    EUR: 0,
+  },
+  MonoJarUAH: 935245.61,
+  PayPalUSD: 6131.52,
   Privat: {
-    UAH: 3071187.50,
+    UAH: 3071187.5,
     USD: 580,
     EUR: 906,
   },
@@ -24,18 +30,24 @@ export const fundraisingStatus: IFundraisingStatus = {
   },
 }
 
-const { MonoJar, NBU, PayPal, Privat } = fundraisingStatus
+const { Cash, MonoJarUAH, NBU, PayPalUSD, Privat } = fundraisingStatus
 
 const numberToFixed = (value: number): number => Number(Number(value).toFixed(1))
 
 export const usdToEur = NBU.USD / NBU.EUR
-
-export const totalInUAH = numberToFixed(
-  MonoJar + PayPal * NBU.USD + Privat.UAH + Privat.EUR * NBU.EUR + Privat.USD * NBU.USD,
-)
 
 export const fundraisingGoals: Record<TCurrency, number> = {
   UAH: numberToFixed(fundraisingGoalUSD * NBU.USD),
   EUR: numberToFixed(fundraisingGoalUSD * usdToEur),
   USD: fundraisingGoalUSD,
 }
+
+export const fundraisingTotals: Record<TCurrency, number> = {
+  UAH: Cash.UAH + MonoJarUAH + Privat.UAH,
+  USD: Cash.USD + PayPalUSD + Privat.USD,
+  EUR: Cash.EUR + Privat.EUR,
+}
+
+export const totalInUAH = numberToFixed(
+  fundraisingTotals.EUR * NBU.EUR + fundraisingTotals.UAH + fundraisingTotals.USD * NBU.USD,
+)
