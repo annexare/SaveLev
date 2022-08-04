@@ -11,6 +11,7 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
+import OpenInNewIcon from '@mui/icons-material/OpenInNew'
 import PaymentIcon from '@mui/icons-material/Payment'
 import TollIcon from '@mui/icons-material/Toll'
 
@@ -155,7 +156,7 @@ const Home: NextPage = () => {
             </InstagramButton>
 
             <Typography component="h2" fontSize={24} paragraph marginTop="1em">
-              {t.tv}
+              {t.tvAndNews}
             </Typography>
 
             <div
@@ -184,6 +185,20 @@ const Home: NextPage = () => {
                 }}
               ></iframe>
             </div>
+
+            <br />
+
+            <Typography paragraph>
+              <Button
+                endIcon={<OpenInNewIcon />}
+                fullWidth
+                href="https://www.5.ua/dv/life/284159"
+                target="_blank"
+                variant="outlined"
+              >
+                {t.articleAt('5.ua')}
+              </Button>
+            </Typography>
           </Grid>
         </Grid>
       </Container>

@@ -5,6 +5,7 @@ export const uk: Translation = {
   name: 'Лев Котлярчик',
   description:
     'У віці 8.5 місяців у мене діагностували СМА. Але я хочу жити, допоможіть мені вилікуватись.',
+  articleAt: (zine: string) => `Стаття на ${zine}`,
   fundraisingTotal: 'Всього зібрано коштів',
   fundraisingDays: (days = 0): string => {
     const lastDigit: number = Number(`${days}`.split('').pop())
@@ -56,8 +57,9 @@ export const uk: Translation = {
   socialNetworks: 'Соціальні мережі',
   socialNetworksInfo: 'Ви можете знайти мої фото, відео та всі оновлення тут:',
   thankYou: 'Щиро дякуємо вам!',
-  tv: 'Про нас на ТБ',
-  zolgensmaPrice: 'Приблизна вартість Zolgensma — 2.1 мільйони доларів США.\nПлюс довготривала реабілітація та супутні витрати.',
+  tvAndNews: 'Про нас: ТБ та новини',
+  zolgensmaPrice:
+    'Приблизна вартість Zolgensma — 2.1 мільйони доларів США.\nПлюс довготривала реабілітація та супутні витрати.',
 
   actionClose: 'Закрити',
   actionLanguage: 'Мова',

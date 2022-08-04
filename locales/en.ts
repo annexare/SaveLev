@@ -3,6 +3,7 @@ export const en = {
   name: 'Lev Kotliarchyk',
   description:
     'At the age of 8.5 months, I was diagnosed with SMA. But I want to live, help me heal.',
+  articleAt: (zine: string) => `${zine} article`,
   fundraisingTotal: 'Total funds raised',
   fundraisingDays: (days = 0): string =>
     `in ${days} day${`${days}`.endsWith('1') && !`${days}`.endsWith('11') ? '' : 's'}`,
@@ -38,7 +39,7 @@ export const en = {
   socialNetworks: 'Social networks',
   socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
   thankYou: 'Thank you very much!',
-  tv: 'About us on TV',
+  tvAndNews: 'About us: TV & Articles',
   zolgensmaPrice:
     'Approximate price for Zolgensma is $2.1M.\nPlus long-term rehabilitation and related expenses.',
 
