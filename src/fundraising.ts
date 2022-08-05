@@ -13,17 +13,17 @@ export interface IFundraisingStatus {
 
 export const fundraisingStatus: IFundraisingStatus = {
   Cash: {
-     UAH: 516052.50,
-     USD: 0,
-     EUR: 0,
-   },
-   MonoJarUAH: 1068253.39,
-   PayPalUSD: 6985.55,
-   Privat: {
-     UAH: 2977890.00,
-     USD: 1580,
-     EUR: 1306,
-   },
+    UAH: 516052.5,
+    USD: 0,
+    EUR: 0,
+  },
+  MonoJarUAH: 1076874.96,
+  PayPalUSD: 6985.55,
+  Privat: {
+    UAH: 3055587.0,
+    USD: 1580,
+    EUR: 1314,
+  },
   NBU: {
     EUR: 37.25,
     USD: 36.6,
