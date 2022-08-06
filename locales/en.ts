@@ -34,7 +34,7 @@ export const en = {
   monoDonate: 'Donate',
   paymentDetails: 'Fundraising',
   paypalTemporarilyDisabled:
-    'PayPal is currently verifying our documents and has temporarily disabled accepting funds. Their support says it might take up to few days :(',
+    "PayPal is currently verifying our documents and has temporarily disabled accepting funds. Their support says it might take up to several days :( We will remove this message as soon as it's fine again.",
   socialDad: "My dad's",
   socialMom: "My mom's",
   socialMy: 'My',
