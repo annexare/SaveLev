@@ -17,10 +17,10 @@ export const fundraisingStatus: IFundraisingStatus = {
     USD: 0,
     EUR: 0,
   },
-  MonoJarUAH: 1076874.96,
+  MonoJarUAH: 1079824.96,
   PayPalUSD: 6985.55,
   Privat: {
-    UAH: 3055587.0,
+    UAH: 3080997.0,
     USD: 1580,
     EUR: 1314,
   },
@@ -51,3 +51,5 @@ export const fundraisingTotals: Record<TCurrency, number> = {
 export const totalInUAH = numberToFixed(
   fundraisingTotals.EUR * NBU.EUR + fundraisingTotals.UAH + fundraisingTotals.USD * NBU.USD,
 )
+
+console.log('- totalInUAH', totalInUAH)
