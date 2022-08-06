@@ -33,6 +33,8 @@ export const en = {
   monoBanka: 'Monobank Jar',
   monoDonate: 'Donate',
   paymentDetails: 'Fundraising',
+  paypalTemporarilyDisabled:
+    'PayPal is currently verifying our documents and has temporarily disabled accepting funds. Their support says it might take up to few days :(',
   socialDad: "My dad's",
   socialMom: "My mom's",
   socialMy: 'My',

@@ -51,5 +51,3 @@ export const fundraisingTotals: Record<TCurrency, number> = {
 export const totalInUAH = numberToFixed(
   fundraisingTotals.EUR * NBU.EUR + fundraisingTotals.UAH + fundraisingTotals.USD * NBU.USD,
 )
-
-console.log('- totalInUAH', totalInUAH)

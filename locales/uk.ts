@@ -51,6 +51,8 @@ export const uk: Translation = {
   monoBanka: 'Банка Monobank',
   monoDonate: 'Поповнити',
   paymentDetails: 'Збір коштів',
+  paypalTemporarilyDisabled:
+    'Наразі PayPal перевіряє наші документи і тимчасово вимкнув зарахування коштів. Підтримка сервісу каже що це може зайняти кілька днів :(',
   socialDad: 'Мій тато в',
   socialMom: 'Моя мама в',
   socialMy: 'Мій',

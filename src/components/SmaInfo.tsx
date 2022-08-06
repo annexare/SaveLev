@@ -46,7 +46,7 @@ export const SmaInfo: FC = () => {
 
   return (
     <>
-      <Alert ref={topEl} severity="info">
+      <Alert elevation={1} ref={topEl} severity="info">
         {t.infoGoal}
       </Alert>
       <Accordion expanded={expanded === EPanels.info1} onChange={handleChange(EPanels.info1)}>

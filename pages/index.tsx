@@ -108,8 +108,11 @@ const Home: NextPage = () => {
                     PayPal
                   </Typography>
                   :
-                  <Typography sx={{ userSelect: 'all' }} onCopy={handleCopyPayPal}>
+                  <Typography paragraph sx={{ userSelect: 'all' }} onCopy={handleCopyPayPal}>
                     {PAYPAL_EMAIL}
+                  </Typography>
+                  <Typography variant="caption">
+                    {t.paypalTemporarilyDisabled}
                   </Typography>
                 </Alert>
               </Grid>
