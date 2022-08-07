@@ -111,9 +111,6 @@ const Home: NextPage = () => {
                   <Typography paragraph sx={{ userSelect: 'all' }} onCopy={handleCopyPayPal}>
                     {PAYPAL_EMAIL}
                   </Typography>
-                  <Typography variant="caption">
-                    {t.paypalTemporarilyDisabled}
-                  </Typography>
                 </Alert>
               </Grid>
 
