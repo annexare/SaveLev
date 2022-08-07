@@ -103,7 +103,7 @@ const Home: NextPage = () => {
               ))}
 
               <Grid item xs={12}>
-                <Alert icon={<PaymentIcon />} action={<PayPalButton disabled />} severity="info">
+                <Alert icon={<PaymentIcon />} action={<PayPalButton />} severity="info">
                   <Typography component="span" fontWeight="bold">
                     PayPal
                   </Typography>
