@@ -17,10 +17,10 @@ export const fundraisingStatus: IFundraisingStatus = {
     USD: 0,
     EUR: 0,
   },
-  MonoJarUAH: 1238021.03,
-  PayPalUSD: 8210.43,
+  MonoJarUAH: 1255044.89,
+  PayPalUSD: 8307.54,
   Privat: {
-    UAH: 3487182,
+    UAH: 3565562,
     USD: 1647,
     EUR: 1484,
   },
