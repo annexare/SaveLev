@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import type { NextPage } from 'next'
 import Image from 'next/image'
 
-import Alert from '@mui/material/Alert'
+// import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
 import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
@@ -12,45 +12,46 @@ import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 
 import OpenInNewIcon from '@mui/icons-material/OpenInNew'
-import PaymentIcon from '@mui/icons-material/Payment'
-import TollIcon from '@mui/icons-material/Toll'
+// import PaymentIcon from '@mui/icons-material/Payment'
+// import TollIcon from '@mui/icons-material/Toll'
 
-import { IGAItem, trackSelectItemEvent } from 'src/analytics'
+// import { IGAItem, trackSelectItemEvent } from 'src/analytics'
 import { BaseCssSeo, mainLevPhoto } from 'src/components/BaseCssSeo'
 import { BaseFooter } from 'src/components/BaseFooter'
-import { CreditCard } from 'src/components/CreditCard'
+// import { CreditCard } from 'src/components/CreditCard'
 import { FundraisingStatus } from 'src/components/FundraisingStatus'
-import { PayPalButton } from 'src/components/PayPal'
+// import { PayPalButton } from 'src/components/PayPal'
 import { SmaInfo } from 'src/components/SmaInfo'
 import { TopNavBar } from 'src/components/TopNavBar'
 import { FacebookButton } from 'src/components/social/FacebookButton'
 import { InstagramButton } from 'src/components/social/InstagramButton'
-import { ESocialLinks, creditCards, MONO_JAR, PAYPAL_EMAIL } from 'src/data'
+// import { ESocialLinks, creditCards, MONO_JAR, PAYPAL_EMAIL } from 'src/data'
+import { ESocialLinks } from 'src/data'
 
 import { LocaleContext } from './_app'
 
 const Home: NextPage = () => {
   const { t } = useContext(LocaleContext)
 
-  const handleCopyPayPal = () => {
-    const item: IGAItem = {
-      item_id: PAYPAL_EMAIL,
-      item_name: `PayPal ${PAYPAL_EMAIL}`,
-      item_category: 'paypal',
-      currency: 'USD',
-    }
-    trackSelectItemEvent('paypal', item)
-  }
+  // const handleCopyPayPal = () => {
+  //   const item: IGAItem = {
+  //     item_id: PAYPAL_EMAIL,
+  //     item_name: `PayPal ${PAYPAL_EMAIL}`,
+  //     item_category: 'paypal',
+  //     currency: 'USD',
+  //   }
+  //   trackSelectItemEvent('paypal', item)
+  // }
 
-  const handleOpenMonoJar = () => {
-    const item: IGAItem = {
-      item_id: MONO_JAR,
-      item_name: `Mono ${MONO_JAR}`,
-      item_category: 'monojar',
-      currency: 'UAH',
-    }
-    trackSelectItemEvent('monojar', item)
-  }
+  // const handleOpenMonoJar = () => {
+  //   const item: IGAItem = {
+  //     item_id: MONO_JAR,
+  //     item_name: `Mono ${MONO_JAR}`,
+  //     item_category: 'monojar',
+  //     currency: 'UAH',
+  //   }
+  //   trackSelectItemEvent('monojar', item)
+  // }
 
   return (
     <>
@@ -96,13 +97,13 @@ const Home: NextPage = () => {
                 <SmaInfo />
               </Grid>
 
-              {creditCards.map((card) => (
+              {/* {creditCards.map((card) => (
                 <Grid key={card.number} item xs={12}>
                   <CreditCard {...card} />
                 </Grid>
-              ))}
+              ))} */}
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Alert icon={<PaymentIcon />} action={<PayPalButton />} severity="info">
                   <Typography component="span" fontWeight="bold">
                     PayPal
@@ -112,9 +113,9 @@ const Home: NextPage = () => {
                     {PAYPAL_EMAIL}
                   </Typography>
                 </Alert>
-              </Grid>
+              </Grid> */}
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <Alert
                   icon={<PaymentIcon />}
                   action={
@@ -132,7 +133,7 @@ const Home: NextPage = () => {
                 >
                   <Typography fontWeight="bold">{t.monoBanka}</Typography>
                 </Alert>
-              </Grid>
+              </Grid> */}
             </Grid>
 
             <Typography component="h2" fontSize={24} paragraph marginTop="1em">

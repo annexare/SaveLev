@@ -6,11 +6,16 @@ import Typography from '@mui/material/Typography'
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip'
 import { styled } from '@mui/material/styles'
 
-import { fundraisingStartDate, fundraisingGoals, totalInUAH } from 'src/fundraising'
+import {
+  fundraisingStartDate,
+  fundraisingEndDate,
+  fundraisingGoals,
+  totalInUAH,
+} from 'src/fundraising'
 import { useTranslation } from 'src/hooks/useTranslation'
 
-const todayDate = new Date().toISOString().split('T')[0]
-const progressDays = dayjs(todayDate).diff(fundraisingStartDate, 'days')
+// const todayDate = new Date().toISOString().split('T')[0]
+const progressDays = dayjs(fundraisingEndDate).diff(fundraisingStartDate, 'days')
 const progressPercent = (totalInUAH / fundraisingGoals.UAH) * 100
 
 const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (

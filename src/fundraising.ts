@@ -2,6 +2,7 @@ import { TCurrency, TForeignCurrency } from './types'
 
 export const fundraisingGoalUSD = 2100000
 export const fundraisingStartDate = '2022-07-21'
+export const fundraisingEndDate = '2022-10-15'
 
 export interface IFundraisingStatus {
   Cash: Record<TCurrency, number>

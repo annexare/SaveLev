@@ -13,7 +13,7 @@ export const en = {
     'But with your help I will find a way to get well and live my healthy life.',
   ],
   infoGoal:
-    'Currently, the fundraising is for Zolgensma (a gene therapy drug capable of stopping SMA), rehabilitation and recovery of physical skills and abilities after administration of the drug.',
+    'Raised funds are going for rehabilitation and recovery of physical skills and abilities after administration of Zolgensma (a gene therapy drug capable of stopping SMA).',
   infoSMA1Title: 'What is SMA?',
   infoSMA1: [
     'SMA (Spinal Muscular Atrophy) is a genetic disease that atrophies muscles. Without treatment - DEADLY.',
