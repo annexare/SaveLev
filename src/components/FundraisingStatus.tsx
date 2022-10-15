@@ -38,10 +38,10 @@ export const FundraisingStatus: FC = () => {
         {t.fundraisingTotal}: <strong>{progressPercent.toFixed(1)}%</strong>{' '}
         {t.fundraisingDays(progressDays)}.
         <br />
-        {t.thankYou}
-        <br />
         <br />
         <LinearProgress color="success" variant="determinate" value={progressPercent} />
+        <br />
+        {t.fundraisingClosed}
       </Typography>
     </BootstrapTooltip>
   )

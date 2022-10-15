@@ -7,6 +7,7 @@ export const en = {
   fundraisingTotal: 'Total funds raised',
   fundraisingDays: (days = 0): string =>
     `in ${days} day${`${days}`.endsWith('1') && !`${days}`.endsWith('11') ? '' : 's'}`,
+  fundraisingClosed: 'Fundraiser is closed now. Please see all info about the progress in my social media. I am truly grateful to everyone for support!',
   infoH1: 'Hi, my name is Lev and I was diagnosed with SMA',
   infoBody: [
     'Unfortunately, I was diagnosed with SMA when I was 8.5 months old.',
