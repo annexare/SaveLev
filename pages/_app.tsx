@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react'
 import type { AppProps } from 'next/app'
+import { Analytics } from '@vercel/analytics/react'
 
 import type { LocaleCode, Translation } from 'locales'
 import * as locales from 'locales'
@@ -30,6 +31,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     <>
       <LocaleContext.Provider value={{ t, setLocale }}>
         <Component {...pageProps} />
+        <Analytics />
       </LocaleContext.Provider>
     </>
   )
