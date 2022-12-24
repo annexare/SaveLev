@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import AppBar from '@mui/material/AppBar'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
+import MuiLink from '@mui/material/Link'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import Toolbar from '@mui/material/Toolbar'
@@ -77,11 +78,22 @@ export const TopNavBar: FC = () => {
           onClose={handleClose}
         >
           {locales.map((l) => (
-            <Link key={l} href={`/${l === 'en' ? '' : l}`} hrefLang={l} locale={false} passHref>
-              <MenuItem component="a" selected={l === locale} onClick={handleClose}>
+            <MenuItem
+              key={l}
+              selected={l === locale}
+              onClick={handleClose}
+              style={{ display: 'block', margin: 0, padding: 0 }}
+            >
+              <MuiLink
+                component={Link}
+                href={`/${l === 'en' ? '' : l}`}
+                hrefLang={l}
+                locale={false}
+                style={{ color: 'inherit', display: 'block', padding: '.5em 1em', textDecoration: 'none' }}
+              >
                 {ELocaleNames[l]}
-              </MenuItem>
-            </Link>
+              </MuiLink>
+            </MenuItem>
           ))}
         </Menu>
       </Toolbar>
