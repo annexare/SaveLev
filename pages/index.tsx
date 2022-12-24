@@ -76,7 +76,13 @@ const Home: NextPage = () => {
 
             <Card sx={{ flex: 1, flexGrow: 1 }}>
               <CardMedia
-                component={() => <Image src={mainLevPhoto} alt={t.name} />}
+                component={() => (
+                  <Image
+                    src={mainLevPhoto}
+                    alt={t.name}
+                    style={{ height: 'auto', width: '100%' }}
+                  />
+                )}
                 sx={{ flex: 1 }}
               />
               <CardContent>
