@@ -7,11 +7,13 @@ export const en = {
   fundraisingTotal: 'Total funds raised',
   fundraisingDays: (days = 0): string =>
     `in ${days} day${`${days}`.endsWith('1') && !`${days}`.endsWith('11') ? '' : 's'}`,
-  fundraisingClosed: 'Fundraiser is closed now. Please see all info about the progress in my social media. I am truly grateful to everyone for support!',
+  fundraisingClosed:
+    'Fundraiser is closed now. Please see all info about the progress in my social media. I am truly grateful to everyone for support!',
   infoH1: 'Hi, my name is Lev and I was diagnosed with SMA',
   infoBody: [
     'Unfortunately, I was diagnosed with SMA when I was 8.5 months old.',
     'But with your help I will find a way to get well and live my healthy life.',
+    'Thank you!',
   ],
   infoGoal:
     'Raised funds are going for rehabilitation and recovery of physical skills and abilities after administration of Zolgensma (a gene therapy drug capable of stopping SMA).',
@@ -40,7 +42,7 @@ export const en = {
   socialMom: "My mom's",
   socialMy: 'My',
   socialNetworks: 'Social networks',
-  socialNetworksInfo: 'You can fing my photos, videos and all updates here:',
+  socialNetworksInfo: 'You can find my updates (photos & videos) here:',
   thankYou: 'Thank you very much!',
   tvAndNews: 'About us: TV & Articles',
   zolgensmaPrice:
