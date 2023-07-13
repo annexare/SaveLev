@@ -32,9 +32,14 @@ export const BaseFooter: FC = () => {
             {l === locale ? (
               ELocaleNames[l]
             ) : (
-              <Link key={l} href={`/${l === 'en' ? '' : l}`} hrefLang={l} locale={false} passHref>
-                <MuiLink>{ELocaleNames[l]}</MuiLink>
-              </Link>
+              <MuiLink
+                component={Link}
+                href={`/${l === 'en' ? '' : l}`}
+                hrefLang={l}
+                locale={false}
+              >
+                {ELocaleNames[l]}
+              </MuiLink>
             )}
             {index < locales.length - 1 ? ',' : null}
           </span>
