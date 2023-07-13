@@ -89,7 +89,12 @@ export const TopNavBar: FC = () => {
                 href={`/${l === 'en' ? '' : l}`}
                 hrefLang={l}
                 locale={false}
-                style={{ color: 'inherit', display: 'block', padding: '.5em 1em', textDecoration: 'none' }}
+                style={{
+                  color: 'inherit',
+                  display: 'block',
+                  padding: '.5em 1em',
+                  textDecoration: 'none',
+                }}
               >
                 {ELocaleNames[l]}
               </MuiLink>
